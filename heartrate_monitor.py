@@ -7,8 +7,6 @@ import hrcalc
 import threading
 import time
 import numpy as np
-import redled
-import greenled
 import Adafruit_DHT
 
 dht_sensor = Adafruit_DHT.DHT11
@@ -65,7 +63,6 @@ class HeartRateMonitor(object):
                         if (np.mean(ir_data) < 50000 and np.mean(red_data) < 50000):
                             self.bpm = 0
                             if self.print_result:
-                                redled.flash_on
                                 print("Finger not detected")
                         if self.print_result:
                             print("BPM: {0}, SpO2: {1}".format(self.bpm, spo2))
@@ -83,5 +80,5 @@ class HeartRateMonitor(object):
         self._thread.stopped = True
         self.bpm = 0
         self._thread.join(timeout)
-        redled.flash_off
+        
 
