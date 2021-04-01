@@ -1,5 +1,5 @@
-# eng103task3
-Task 3 for ENG103 project
+# Heart Beat Sensor Project using Raspberry Pi and Python
+
 
 Used information from 
 https://github.com/doug-burrell/max30102
